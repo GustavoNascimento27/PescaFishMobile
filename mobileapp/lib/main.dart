@@ -136,17 +136,19 @@ class MyApp extends StatelessWidget {
           Row(mainAxisAlignment:MainAxisAlignment.spaceEvenly, children: <Widget>[IconButton(icon: Image.asset('assets/santos.png'), iconSize: 1.0, onPressed: (){
             onsantospressed(context, 'santos');
               }, 
-          )]
-          
-            ),
-             Row(mainAxisAlignment:MainAxisAlignment.spaceEvenly, children: <Widget>[IconButton(icon: Image.asset('assets/guaruja.png'), iconSize: 1.0, onPressed: (){
+          )
+           
+            
+             , Row(mainAxisAlignment:MainAxisAlignment.spaceEvenly, children: <Widget>[
+              
+              IconButton(icon: Image.asset('assets/guaruja.png'), iconSize: 1.0, onPressed: (){
               onguarujapressed(context, 'guaruja');
             })])
             
             
          ] ),
-        ),
-     ) ));
+       ] ),
+     ) )));
     
   }
 }

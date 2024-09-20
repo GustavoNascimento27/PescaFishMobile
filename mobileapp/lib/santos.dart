@@ -7,6 +7,63 @@ void main() {
   runApp(santos());
 
 }
+class SantosCard extends StatelessWidget {
+  final String image;
+  final String nome;
+  final String descricao;
+  final String descricaoum;
+  final String descricaodois;
+  final String descricaotres;
+   const SantosCard({ required this.image, required this.nome,  required this.descricao, required this.descricaoum, required this.descricaodois, required this.descricaotres});
+  
+  @override
+
+  Widget build(BuildContext context) {
+   return Column(
+            
+               crossAxisAlignment: CrossAxisAlignment.center,
+                children:[
+                    Image.asset(image),
+
+                    Text(nome, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,),
+                     Text(descricao),
+                     Text(descricaoum),
+                     Text(descricaodois),
+                     Text(descricaotres)
+   
+   
+   ]);
+  }
+}
+
+class SantosumCard extends StatelessWidget {
+  final String image;
+  final String nome;
+ 
+   const SantosumCard({ required this.image, required this.nome});
+  
+  @override
+
+  Widget build(BuildContext context) {
+    return Column(
+            
+               crossAxisAlignment: CrossAxisAlignment.center,
+        
+                children:[
+                    Image.asset(image),
+                    SizedBox(height:10),
+                    Text(nome),
+                  
+            
+   
+   ]);
+  }
+}
+
+
+
+
 void onVoltarPressed(BuildContext context, String title) {
     Navigator.push(
       context,
@@ -39,100 +96,34 @@ class santos extends StatelessWidget {
           title: Text('SANTOS',style: TextStyle(color: Colors.white),),
           backgroundColor: Colors.teal
         ),
-    body: Column(
+    body: Column( 
    children: [    Expanded(
 
-              child: Row(
+              child: Column(
+              
                 children: [
-                  Expanded(
-                    child: Image.asset('assets/san.png'), ),Expanded(
- child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Praias belas e movimentadas.',
+                  Expanded(child: 
+                 SantosCard(image: 'assets/san.png', nome: "Santos", descricao: 'Praias belas e movimentadas', descricaoum:'Ponto importante do Brasil' , descricaodois: 'História rica e vibrante', descricaotres: 'Venha conhecer e se encantar',
+                 )),
 
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),  ),
+                    SizedBox(height: 16),
+Expanded(child:
+                 SantosumCard(image: 'assets/praiagonzaga.png', nome: 'Praia do Gonzaga')),
 
-                          SizedBox(height: 8),
-                          Text(
-                            'Porto importante do Brasil.',
-                            style: TextStyle(
-                              fontSize: 16,
-                            ),  ),
-                          SizedBox(height: 8),
-                          Text(
-                            'História rica e vibrante.',
-                            style: TextStyle(
-                              fontSize: 16,
+                 SizedBox(height:16),
 
-                            ),
-                          ),
-                          SizedBox(height: 8),
+                 Expanded(child:
 
-                          Text(
-                            'Venha conhecer e se encantar!',
-                            style: TextStyle(
-                              fontSize: 16,
-   ),
-         ), ], ),
-),
-), ],
- ), ),
-  Expanded(
- child: Row( children: [
-   Expanded(
- child: Image.asset('assets/praiagonzaga.png'),
- ),Expanded( child: Center(child: Text( 'PRAIA DO GONZAGA',
+                 SantosumCard(image: 'assets/praiajose.png', nome: 'Praia do José Menino'))
+              
+        
+                   
 
-                      style: TextStyle(
+                          
 
-                   fontSize: 20,
+             
+ 
 
-             fontWeight: FontWeight.bold
-                        ),
-                      ),
-
-                    ),
-
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Image.asset('assets/praiajose.png'),
-                  ),
-                  Expanded(
-
-                    child: Center(
-                      child: Text(
-                        'PRAIA DO JOSE MENINO',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                ),
-               ),
-
-                   ),         ),
-
-           ],
-
-              )
-            ),
-         ],
-       ),
-
-      ),
-    );
-
-  }
-
+]))])));
+}
 }

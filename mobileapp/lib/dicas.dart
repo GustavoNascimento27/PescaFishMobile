@@ -45,37 +45,37 @@ class dicas extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20.0),
-                _buildTip(
+                _buildcoisa(
                   '1. Equipamento Adequado:',
                   'Use varas, linhas e anzóis específicos para o tipo de peixe que deseja capturar.',
                 ),
                 SizedBox(height: 10.0),
-                _buildTip(
+                _buildcoisa(
                   '2. Isca Correta:',
                   'Utilize iscas naturais ou artificiais que sejam eficazes para a espécie alvo na região e estação.',
                 ),
                 SizedBox(height: 10.0),
-                _buildTip(
+                _buildcoisa(
                   '3. Horários Ideais:',
                   'Pesque no início da manhã ou fim da tarde, quando os peixes estão mais ativos.',
                 ),
                 SizedBox(height: 10.0),
-                _buildTip(
+                _buildcoisa(
                   '4. Condições Climáticas:',
                   'Esteja atento ao clima, pois mudanças no tempo, como chuvas ou vento, podem afetar a atividade dos peixes.',
                 ),
                 SizedBox(height: 10.0),
-                _buildTip(
+                _buildcoisa(
                   '5. Variedade de Técnicas:',
                   'Aprenda e aplique diferentes técnicas de pesca, como pesca com mosca, pesca de fundo e pesca de superfície.',
                 ),
                 SizedBox(height: 10.0),
-                _buildTip(
+                _buildcoisa(
                   '6. Manutenção do Equipamento:',
                   'Verifique e mantenha seu equipamento em boas condições, substituindo linhas desgastadas e afiando anzóis.',
                 ),
                 SizedBox(height: 10.0),
-                _buildTip(
+                _buildcoisa(
                   '7. Segurança:',
                   'Use coletes salva-vidas quando necessário e esteja ciente dos perigos locais, como correntes fortes ou animais selvagens.',
                 ),
@@ -87,7 +87,7 @@ class dicas extends StatelessWidget {
     );
   }
 
-  Widget _buildTip(String title, String description) {
+  Widget _buildcoisa(String title, String description) {
     return Container(
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(

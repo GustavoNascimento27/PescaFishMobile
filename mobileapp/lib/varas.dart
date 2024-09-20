@@ -6,6 +6,30 @@ void main() {
   runApp(const varas());
 }
 
+
+class VarasCard extends StatelessWidget {
+  final String image;
+  final String nome;
+  final String descricao;
+   const VarasCard({super.key, required this.image, required this.nome, required this.descricao});
+  
+  @override
+
+  Widget build(BuildContext context) {
+   return Center(
+            child: Column(
+                mainAxisAlignment:MainAxisAlignment.center,
+                children:[
+                    Image.asset(image),
+                    SizedBox(height:10),
+                    Text(nome),
+                     Text(descricao),
+   
+   
+   ]));
+  }
+}
+
 void onVoltarPressed(BuildContext context, String title) {
     Navigator.push(
       context,
@@ -27,51 +51,17 @@ class varas extends StatelessWidget {
          backgroundColor: const Color.fromRGBO(17, 114, 120, 1), 
          
       )          
-     , body: GridView.count(
-        crossAxisCount: 2,
-        children: <Widget>[
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/varatelescopica.png'),
-                const Text('Vara de pesca telescópica'),
-                const Text('Para pescas em geral'),
-              ],
-            ),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/varasurf.png'),
-                const Text('Vara de pesca de Surfcasting'),
-                const Text('Para lançamentos a partir da praia'),
-              ],
-            ),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/varafundo.png'),
-                const Text('Vara de pesca de fundo'),
-                const Text('Para peixes que habitam o fundo'),
-              ],
-            ),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/varamar.png'),
-                const Text('Vara de pesca de mar'),
-                const Text('Para pesca em alto-mar'),
-              ],
-            ),
-          ),
-        ],
-      ),
+      , body:GridView.count(
+                    crossAxisCount: 2,
+                    children:[
+                        VarasCard( image: 'assets/varatelescopica.png',nome: 'Vara de pesca Telescópica', descricao:'Para uso geral'),
+                         VarasCard(image: 'assets/varasurf.png', nome: 'Vara de pesca de surfcasting', descricao:'Para lançamentos a partir da praia' ),
+                          VarasCard(  image: 'assets/varamar.png', nome: 'Vara de pesca de mar', descricao:'Para pesca em alto mar '),
+                           VarasCard(  image:'assets/varafundo.png', nome: 'Vara de Pesca de Fundo', descricao:'Para peixes que habitam no fundo' ),
+                    ]
+      )
     );
-  }
-}
+    
+
+    }
+    }

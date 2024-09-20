@@ -16,6 +16,65 @@ void onVoltarPressed(BuildContext context, String title) {
   }
 
 
+class GuarujaCard extends StatelessWidget {
+  final String image;
+  final String nome;
+  final String descricao;
+  final String descricaoum;
+  final String descricaodois;
+
+   const GuarujaCard({ required this.image, required this.nome,  required this.descricao, required this.descricaoum, required this.descricaodois});
+  
+  @override
+
+  Widget build(BuildContext context) {
+   return Column(
+            
+               crossAxisAlignment: CrossAxisAlignment.center,
+                children:[
+                    Image.asset(image),
+
+                    Text(nome, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,),
+                     Text(descricao),
+                     Text(descricaoum),
+                     Text(descricaodois),
+                    
+   
+   
+   ]);
+  }
+}
+
+class GuarujaumCard extends StatelessWidget {
+  final String image;
+  final String nome;
+ 
+   const GuarujaumCard({ required this.image, required this.nome});
+  
+  @override
+
+  Widget build(BuildContext context) {
+    return Column(
+            
+               crossAxisAlignment: CrossAxisAlignment.center,
+        
+                children:[
+                    Image.asset(image),
+                    SizedBox(height:10),
+                    Text(nome),
+                  
+            
+   
+   ]);
+  }
+}
+
+
+
+
+
+
 class guaruja extends StatelessWidget {
 
   @override
@@ -39,100 +98,34 @@ class guaruja extends StatelessWidget {
           title: Text('Guaruja',style: TextStyle(color: Colors.white),),
           backgroundColor: Colors.teal
         ),
-    body: Column(
+    body: Column( 
    children: [    Expanded(
 
-              child: Row(
+              child: Column(
+              
                 children: [
-                  Expanded(
-                    child: Image.asset('assets/gua.png'), ),Expanded(
- child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Praias lindas e badaladas.',
+                  Expanded(child: 
+                 GuarujaCard(image: 'assets/gua.png', nome: "Guaruja", descricao: 'Destino turisitico popular ', descricaoum:'Belezas naturais impressionantes' , descricaodois: 'Visite e aproveite as maravilhas', 
+                 )),
 
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),  ),
+                    SizedBox(height: 16),
+Expanded(child:
+                 GuarujaumCard(image: 'assets/praiatombo.png', nome: 'Praia do Tombo')),
 
-                          SizedBox(height: 8),
-                          Text(
-                            'Destino turistico popular.',
-                            style: TextStyle(
-                              fontSize: 16,
-                            ),  ),
-                          SizedBox(height: 8),
-                          Text(
-                            'Belezas naturais e impressionantes.',
-                            style: TextStyle(
-                              fontSize: 16,
+                 SizedBox(height:16),
 
-                            ),
-                          ),
-                          SizedBox(height: 8),
+                 Expanded(child:
 
-                          Text(
-                            'Visite e aproveite as maravilhas!',
-                            style: TextStyle(
-                              fontSize: 16,
-   ),
-         ), ], ),
-),
-), ],
- ), ),
-  Expanded(
- child: Row( children: [
-   Expanded(
- child: Image.asset('assets/praiatombo.png'),
- ),Expanded( child: Center(child: Text( 'Praia do Tombo',
+                 GuarujaumCard(image: 'assets/praiaasturias.png', nome: 'Praia das Asturias'))
+              
+        
+                   
 
-                      style: TextStyle(
+                          
 
-                   fontSize: 20,
+             
+ 
 
-             fontWeight: FontWeight.bold
-                        ),
-                      ),
-
-                    ),
-
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Image.asset('assets/praiaasturias.png'),
-                  ),
-                  Expanded(
-
-                    child: Center(
-                      child: Text(
-                        'Praia das Asturias',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                ),
-               ),
-
-                   ),         ),
-
-           ],
-
-              )
-            ),
-         ],
-       ),
-
-      ),
-    );
-
-  }
-
+]))])));
+}
 }

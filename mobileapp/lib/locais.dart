@@ -3,6 +3,31 @@ import 'package:mobileapp/main.dart';
 
 void main() => runApp(locais());
 
+class LocalCard extends StatelessWidget {
+  final String image;
+  final String nome;
+
+
+  const LocalCard({super.key, required this.image, required this.nome,});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Image.asset(image),
+        const SizedBox(height: 10),
+        Text(
+          nome,
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ),
+   
+      ],
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,108 +68,60 @@ class locais extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
            
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'SANTOS',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
                   SizedBox(height: 16),
              
-                  buildPlaceCard(
-                    'assets/deckpescador.png',
+                  LocalCard(
+                    image: 'assets/deckpescador.png',
+                    nome: "Deck do pescador",
+                 
                     
                   ),
-                    Text('Deck do Pescador'),
                   SizedBox(height: 16),
               
-                  buildPlaceCard(
-                    'assets/clubepesca.png',
+                  LocalCard(
+                    image: 'assets/clubepesca.png',
+                    nome: 'Clube de Pesca de Santos',
+              
                  
                   ),
-                  Text('Clube de Pesca de Santos'),
-                ],
-              ),
-            ),
+                
+
 
           
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'GUARUJA',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 16),
+         
                   
-                  buildPlaceCard(
-                    'assets/asturias.png',
+                  LocalCard(
+                  image:'assets/asturias.png',
+                  nome:'Praia das Asturias',
+               
                    
                   ),
-                  Text('Praia das Asturias'),
+           
                   SizedBox(height: 16),
-                ],
-              ),
-            ),
+                
+              
+          
 
      
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'VITORIA FENIX',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 16),
+        
+                  
+                  
+                  const SizedBox(height: 16),
                 
-                  buildPlaceCard(
-                    'assets/fenix.jpg',
+                  LocalCard(
+                    image: 'assets/fenix.jpg',
+                  
+                  nome: 'Vitoria Fênix',
+                  
+                      
                 
                   ),
-                      Text('Vitoria Fênix'),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+                
+    ])));
   }
 
-  Widget buildPlaceCard(String imagePath) {
-    return Card(
-      child: InkWell(
-        onTap: () {
-        },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(imagePath),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-
-                
-                ),
-            ]),
-            ),
-      
+ 
+ 
     
-    );
+    
   }
-}

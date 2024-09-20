@@ -40,12 +40,10 @@ class manual extends StatelessWidget {
           child: Column(
 
             crossAxisAlignment: CrossAxisAlignment.start,
-
             children: <Widget>[
+         Text(
 
-              Text(
-
-                'Introdução',
+              'Introdução',
 
                 style: TextStyle(
 
@@ -54,13 +52,9 @@ class manual extends StatelessWidget {
                   fontWeight: FontWeight.bold,
 
                 ),
-
               ),
-
               SizedBox(height: 16),
-
-              Text(
-
+              Text( 
                 'Pescar é uma atividade relaxante e emocionante que pode ser praticada em diversos ambientes, como rios, lagos, mares e represas. Este manual oferece uma visão geral das técnicas, equipamentos e dicas essenciais para começar a pescar.',
 
                 style: TextStyle(fontSize: 16),
@@ -168,7 +162,6 @@ class manual extends StatelessWidget {
               _buildListItem('Silêncio e Discrição:', 'Mantenha-se silencioso e evite movimentos bruscos para não assustar os peixes.'),
 
               SizedBox(height: 32),
-
               Text(
 
                 'Segurança e Regulamentação',
@@ -192,7 +185,6 @@ class manual extends StatelessWidget {
               _buildListItem('Sustentabilidade:', 'Pratique a pesca sustentável, capturando apenas o que vai consumir e liberando peixes menores ou espécies em risco.'),
 
               SizedBox(height: 32),
-
               Text(
 
                 'Manutenção do Equipamento',
@@ -206,7 +198,6 @@ class manual extends StatelessWidget {
                 ),
 
               ),
-
               SizedBox(height: 16),
 
               _buildListItem('Limpeza e Armazenamento:', 'Lave os equipamentos com água doce após cada uso, especialmente se pescou em água salgada. Armazene varas e molinetes em locais secos e protegidos.'),
@@ -216,7 +207,6 @@ class manual extends StatelessWidget {
               SizedBox(height: 32),
 
               Text(
-
                 'Conclusão',
 
                 style: TextStyle(
@@ -226,13 +216,11 @@ class manual extends StatelessWidget {
                   fontWeight: FontWeight.bold,
 
                 ),
-
               ),
 
               SizedBox(height: 16),
 
               Text(
-
                 'Pescar é uma atividade que pode proporcionar momentos de tranquilidade e emoção. Com o equipamento certo, técnicas adequadas e respeito à natureza, você estará pronto para aproveitar tudo o que a pesca tem a oferecer.\n\nBoa pesca!',
 
                 style: TextStyle(fontSize: 16),
@@ -245,9 +233,7 @@ class manual extends StatelessWidget {
 
         ),
 
-      ),
-
-    ));
+      ),  ));
 
   }
 
@@ -259,28 +245,19 @@ class manual extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
 
       children: [
-
         Text(
-
           title,
-
           style: TextStyle(
-
             fontSize: 18,
-
             fontWeight: FontWeight.bold,
-
           ),
-
         ),
 
         SizedBox(height: 8),
 
         Text(
-
           description,
-
-          style: TextStyle(fontSize: 16),
+             style: TextStyle(fontSize: 16),
 
         ),
 

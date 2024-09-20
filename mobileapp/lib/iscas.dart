@@ -5,6 +5,28 @@ void main(){
     runApp(Iscas());
 }
 
+class IscasCard extends StatelessWidget {
+  final String image;
+  final String nome;
+
+
+  const IscasCard({super.key, required this.image, required this.nome});
+  
+  @override
+
+  Widget build(BuildContext context) {
+   return Center(
+            child: Column(
+                mainAxisAlignment:MainAxisAlignment.center,
+                children:[
+                    Image.asset(image),
+                    SizedBox(height:10),
+                    Text(nome),
+   
+   ]));
+  }
+}
+
 void onVoltarPressed(BuildContext context, String title) {
     Navigator.push(
       context,
@@ -33,10 +55,10 @@ class Iscas extends StatelessWidget{
                , body:GridView.count(
                     crossAxisCount: 2,
                     children:[
-                        _buildGridItem('pequenos peixes', 'assets/iscaart.png'),
-                         _buildGridItem('Pequenos peixes', 'assets/iscaart.png'),
-                          _buildGridItem( 'Ração para peixes',  'assets/racao.png'),
-                           _buildGridItem(  'Minhoca', 'assets/minhoca.png' ),
+                        IscasCard( image: 'assets/peqpeixes.png',nome: 'Pequenos peixes'),
+                         IscasCard(image: 'assets/iscaart.png', nome: 'Iscas artificiais' ),
+                          IscasCard(  image: 'assets/racao.png', nome: 'Ração',),
+                           IscasCard(  image:'assets/minhoca.png', nome: 'Minhoca', ),
                     ],
                 ),
           
@@ -46,16 +68,5 @@ class Iscas extends StatelessWidget{
             
         
     }
-    Widget _buildGridItem(String title, String imagePath){
-        return Center(
-            child: Column(
-                mainAxisAlignment:MainAxisAlignment.center,
-                children:[
-                    Image.asset(imagePath),
-                    SizedBox(height:10),
-                    Text(title),
-                ]
-            )
-        );
+  
     }
-}
